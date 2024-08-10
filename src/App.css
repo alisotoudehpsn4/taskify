@@ -182,7 +182,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Make the header stretch across the full width */
+  width: 100%; 
   box-sizing: border-box;
 }
 
@@ -203,7 +203,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .website-link:hover {
-  color: #6a44cc; /* Change the color on hover */
+  color: #6a44cc; 
 }
 
 
