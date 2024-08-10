@@ -1,6 +1,7 @@
 
 import './App.css';
 import TaskWrapper from './components/TaskWrapper';
+import Header from './components/Header';
 
 
 
@@ -8,7 +9,7 @@ import TaskWrapper from './components/TaskWrapper';
 function App() {
   return (
     <div className="App">
-
+      <Header/>
       <TaskWrapper/>
   
     </div>
