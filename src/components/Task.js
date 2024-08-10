@@ -19,12 +19,18 @@ const Task = ({ task, updateTask, deleteTask }) => {
         <FontAwesomeIcon
           className="edit-icon"
           icon={faPenToSquare}
-          onClick={() => updateTask(task.id)}
+          onClick={() => {
+            console.log("Edit Clicked:", task.id);
+            updateTask(task.id);
+          }}
         />
         <FontAwesomeIcon
           className="delete-icon"
           icon={faTrash}
-          onClick={() => deleteTask(task.id)}
+          onClick={() => {
+            console.log("Delete Clicked:", task.id);
+            deleteTask(task.id);
+          }}
         />
       </div>
     </div>

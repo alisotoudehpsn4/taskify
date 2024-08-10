@@ -17,6 +17,11 @@ const TaskForm = ({ addTask }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    if (!task.title || !task.Description || !task.DueDate) {
+      alert('Please fill out all fields.');
+      return;
+    }
     addTask(task); 
     setTask({ title: '', Description: '', DueDate: '' }); 
   };

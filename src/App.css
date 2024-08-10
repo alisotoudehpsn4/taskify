@@ -34,6 +34,10 @@ h1 {
 .TaskForm {
   width: 100%;
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .task-input {
@@ -41,22 +45,44 @@ h1 {
   background: none;
   border: 1px solid #8758ff;
   padding: 0.5rem 1rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  width: 300px;
+  margin-right: 1rem;
+  width: 100%;
+  max-width: 200px;
   color: #fff;
 }
 
-.task-input::placeholder {
-  color: #ffffff4d;
+input[type="date"] {
+  outline: none;
+  background: none;
+  border: 1px solid #8758ff;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  width: 100%;
+  max-width: 200px;
+  color: #fff;
+  -webkit-appearance: none; 
+  position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); 
+  cursor: pointer;
 }
 
 .task-btn {
   background: #8758ff;
   color: #fff;
   border: none;
-  padding: 0.55rem;
+  padding: 0.55rem 1rem;
   cursor: pointer;
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+
+
+
+.task-input::placeholder {
+  color: #ffffff4d;
 }
 
 .Task {
