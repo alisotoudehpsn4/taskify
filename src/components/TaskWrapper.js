@@ -68,11 +68,21 @@ const TaskWrapper = () => {
           />
         )
       ))}
-      <div className="pagination">
-        <button onClick={prevPage} disabled={currentPage === 1}>Previous</button>
-        <span> Page {currentPage} of {Math.ceil(tasks.length / tasksPerPage)} </span>
-        <button onClick={nextPage} disabled={currentPage === Math.ceil(tasks.length / tasksPerPage)}>Next</button>
-      </div>
+      
+      {/* pagiantion display */}
+        <div className="pagination">
+
+    {currentPage > 1 && (
+        <button onClick={prevPage}>Previous</button>
+    )}
+    
+    <span> Page {currentPage} of {Math.ceil(tasks.length / tasksPerPage)} </span>
+    
+    {currentPage < Math.ceil(tasks.length / tasksPerPage) && (
+        <button onClick={nextPage}>Next</button>
+    )}
+    </div>
+
     </div>
   );
 };
