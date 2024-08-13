@@ -9,15 +9,14 @@
 
 body {
   background: #8758ff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 0;
   padding: 0;
 }
 
 .App {
   text-align: center;
+  max-width: 1200px; /* set a consistent max-width for the entire app */
+  margin: 0 auto;
 }
 
 h1 {
@@ -26,44 +25,53 @@ h1 {
   font-size: 1.75rem;
 }
 
+.header, .weather, .TaskWrapper {
+  width: 100%; /* make sure all components take full width */
+  max-width: 1200px; /* set a max-width for large screens */
+  margin: 0 auto; /* center all components */
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #1A1A40;
+  padding: 10px 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather {
+  background: #1A1A40;
+  color: #fff;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
 .TaskWrapper {
   background: #1A1A40;
-  margin-top: 5rem;
-  padding: 2rem;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
   border-radius: 5px;
 }
 
 .TaskForm {
   width: 100%;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto; /* evenly distribute space */
+  gap: 1rem;
   align-items: center;
 }
 
-.task-input {
+.task-input, input[type="date"] {
   outline: none;
   background: none;
   border: 1px solid #8758ff;
   padding: 0.5rem 1rem;
-  margin-right: 1rem;
-  width: 100%;
-  max-width: 200px;
   color: #fff;
-}
-
-input[type="date"] {
-  outline: none;
-  background: none;
-  border: 1px solid #8758ff;
-  padding: 0.5rem 1rem;
-  margin-right: 1rem;
-  width: 100%;
-  max-width: 200px;
-  color: #fff;
-  -webkit-appearance: none; 
-  position: relative;
+  width: 100%; /* ensure full width */
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -77,8 +85,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border: none;
   padding: 0.55rem 1rem;
   cursor: pointer;
-  margin-left: 1rem;
-  flex-shrink: 0;
   transition: background-color 0.3s ease, transform 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -86,8 +92,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: #6a44cc;
   transform: translateY(-2px);
 }
-
-
 
 .task-input::placeholder {
   color: #ffffff4d;
@@ -119,7 +123,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   align-items: center;
 }
 
-
 .edit-icon,
 .delete-icon {
   cursor: pointer;
@@ -132,7 +135,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: #6a44cc; 
   transform: scale(1.1); 
 }
-
 
 .fa-trash {
   margin-left: 0.75rem;
@@ -173,19 +175,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin: 0 0.5rem;
 }
 
-
-
-.header {
-  background-color: #1A1A40;
-  padding: 10px 20px;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%; 
-  box-sizing: border-box;
-}
-
 .logo {
   display: flex;
   align-items: center;
@@ -206,11 +195,37 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: #6a44cc; 
 }
 
+@media (max-width: 768px) {
+  .header, .weather, .TaskWrapper {
+    padding: 1rem; /* reduce padding for smaller screens */
+  }
 
+  .TaskForm {
+    grid-template-columns: 1fr; /* stack the form elements vertically */
+    gap: 0.5rem; /* reduce gap between elements */
+  }
 
+  .task-input, input[type="date"], .task-btn {
+    max-width: 100%; /* ensure full width for inputs and button */
+    margin: 0; /* remove extra margins */
+  }
 
+  .header {
+    flex-direction: column; /* stack header items vertically */
+    text-align: center; /* center align header text */
+  }
 
+  .weather {
+    text-align: center; /* center align weather info */
+  }
 
+  .pagination {
+    flex-direction: column; /* stack pagination buttons */
+  }
 
+  .pagination button {
+    margin-bottom: 0.5rem; /* add space between buttons */
+    width: 100%; /* make buttons full width */
+  }
+}
 
- 

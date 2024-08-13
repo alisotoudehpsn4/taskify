@@ -36,7 +36,7 @@ const TaskForm = ({ addTask }) => {
         value={task.title} 
         onChange={handleInputChange}
       />
-      <input
+      <textarea
         type="text"
         name="Description"
         className='task-input'

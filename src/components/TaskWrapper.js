@@ -10,7 +10,7 @@ const TaskWrapper = () => {
   const tasksPerPage = 10;
 
   const addTask = (task) => {
-    const newTask = { id: uuidv4(), ...task, completed: false, isEditing: false };
+    const newTask = { id: uuidv4(), ...task,isEditing: false };
     setTasks([...tasks, newTask]);
   };
 
@@ -51,6 +51,7 @@ const TaskWrapper = () => {
     <div className='TaskWrapper'>
       <h1>Tasks</h1>
       <TaskForm addTask={addTask} />
+      <br></br>
       {currentTasks.map((task) => (
         task.isEditing ? (
           <UpdateTaskForm
