@@ -1,8 +1,22 @@
+/**
+ * Imports React for building the header component.
+ */
 import React from 'react';
+
+/**
+ * Imports FontAwesomeIcon and task-related icons for the header.
+ */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTasks } from '@fortawesome/free-solid-svg-icons';
 
+/**
+ * Defines the Header component.
+ * Displays the logo with the Taskify title and author information.
+ */
 const Header = () => {
+  /**
+   * Renders the header section with a logo and my information.
+   */
   return (
     <header className="header">
       <div className="logo">
@@ -26,6 +40,9 @@ const Header = () => {
   );
 };
 
+/**
+ * Defines inline styles for the FontAwesome icon and the title.
+ */
 const iconStyle = {
   marginRight: '10px',
   fontSize: '24px',
@@ -35,4 +52,7 @@ const titleStyle = {
   margin: 0,
 };
 
+/**
+ * Exports the Header component as the default export.
+ */
 export default Header;
