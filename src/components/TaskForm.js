@@ -72,13 +72,16 @@ const TaskForm = ({ addTask }) => {
         value={task.Description} 
         onChange={handleInputChange}
       />
-      <input
-        type="date"
-        name="DueDate"
-        className='task-input'
-        value={task.DueDate} 
-        onChange={handleInputChange}
-      />
+ <div class="date-container">
+  <input
+    type="date"
+    name="DueDate"
+    className="task-input"
+    value={task.DueDate} 
+    onChange={handleInputChange}
+  />
+</div>
+
       <button type='submit' className='task-btn'>
         Add
       </button>

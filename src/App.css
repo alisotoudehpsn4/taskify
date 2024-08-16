@@ -256,6 +256,30 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 0.95rem; /* Slightly adjust for smaller screens */
     padding: 0.65rem; /* Adjust padding for smaller screens */
   }
+
+  .date-container {
+    position: relative;
+  }
+
+  .date-container::before {
+    content: "Select due date"; /* Placeholder text */
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: #ffffff4d; /* Light color for placeholder */
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .date-container input[type="date"]:focus::before,
+  .date-container input[type="date"]:not(:placeholder-shown)::before {
+    opacity: 0; /* Hide the placeholder when the date is selected or focused */
+  }
+
+  .date-container input[type="date"] {
+    padding-left: 1rem; /* Ensure padding to accommodate the placeholder */
+  }
 }
 
 .search {
