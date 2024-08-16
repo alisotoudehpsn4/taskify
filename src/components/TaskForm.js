@@ -9,12 +9,23 @@ import React, { useState } from 'react';
  */
 const TaskForm = ({ addTask }) => {
   /**
-   * useState hook to manage form input state.
+   * Get today's date in YYYY-MM-DD format.
+   */
+  const getTodayDate = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed in JavaScript
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
+  /**
+   * useState hook to manage form input state, with DueDate defaulted to today's date.
    */
   const [task, setTask] = useState({
     title: '',
     Description: '',
-    DueDate: ''
+    DueDate: getTodayDate() // Set initial DueDate to today's date
   });
 
   /**
@@ -48,7 +59,7 @@ const TaskForm = ({ addTask }) => {
      * Calls addTask to add the new task.
      */
     addTask(task); 
-    setTask({ title: '', Description: '', DueDate: '' }); 
+    setTask({ title: '', Description: '', DueDate: getTodayDate() }); // Reset DueDate to today's date
   };
 
   /**
@@ -76,7 +87,6 @@ const TaskForm = ({ addTask }) => {
         type="date"
         name="DueDate"
         className='task-input'
-        placeholder='Select date'
         value={task.DueDate} 
         onChange={handleInputChange}
       />
