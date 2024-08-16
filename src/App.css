@@ -280,3 +280,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-left: 0.75rem; /* Adjust margin to match the other icons */
 }
 
+textarea.task-input {
+  height: 38px; /* Same initial height as input fields */
+  line-height: 1.5; /* Consistent line height */
+  resize: vertical; /* Allow vertical resizing only */
+  overflow: auto; /* Show scrollbar if necessary */
+
+}
+
