@@ -251,6 +251,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-bottom: 0.5rem; /* add space between buttons */
     width: 100%; /* make buttons full width */
   }
+
+    input[type="date"] {
+    font-size: 0.95rem; /* Slightly adjust for smaller screens */
+    padding: 0.65rem; /* Adjust padding for smaller screens */
+  }
 }
 
 .search {
