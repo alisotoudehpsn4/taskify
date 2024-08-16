@@ -29,9 +29,9 @@ const Task = ({ task, updateTask, deleteTask }) => {
   return (
     <div className="Task">
       <div className="task-content">
-        <p className="task-title"><strong>Title:</strong> {taskDetails.title}</p>
-        <p className="task-description"><strong>Description:</strong> {taskDetails.Description}</p>
-        <p className="task-due-date"><strong>Due Date:</strong> {taskDetails.DueDate}</p>
+        <p className="task-title">{taskDetails.title}</p>
+        <p className="task-description">{taskDetails.Description}</p>
+        <p className="task-due-date">{taskDetails.DueDate}</p>
       </div>
       <div className="task-actions">
         <FontAwesomeIcon

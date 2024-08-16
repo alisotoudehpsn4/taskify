@@ -97,6 +97,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: #ffffff4d;
 }
 
+
+
+.task-content {
+  flex-grow: 1;
+}
+
 .Task {
   display: flex;
   justify-content: space-between;
@@ -110,13 +116,31 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .task-content {
   flex-grow: 1;
+  text-align: left; /* Ensure text is aligned to the left */
 }
 
-.task-title,
+.task-title {
+  font-size: 1.5rem; /* Larger font size for the title */
+  font-weight: bold; /* Make the title bold */
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
 .task-description,
 .task-due-date {
-  margin: 0.5rem 0;
+  font-size: 1rem; /* Standard font size for description and due date */
+  color: #d1d1d1;
+  margin-bottom: 0.25rem;
 }
+
+/* Ensuring all text is vertically centered */
+.task-content p {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  
+}
+
+
 
 .task-actions {
   display: flex;
