@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPenToSquare, faTrash, faCalendar } from '@fortawesome/free-solid-svg-icons';
 
 const Task = ({ task, updateTask, deleteTask }) => {
   const [taskDetails, setTaskDetails] = useState({
@@ -50,9 +50,11 @@ const Task = ({ task, updateTask, deleteTask }) => {
             deleteTask(task.id);
           }}
         />
-        <button onClick={handleAddToCalendar} className='task-btn'>
-          Add To Calendar
-        </button>
+       <FontAwesomeIcon
+          className="calendar-icon"
+          icon={faCalendar}
+          onClick={handleAddToCalendar}
+        />
       </div>
     </div>
   );

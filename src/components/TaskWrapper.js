@@ -22,7 +22,72 @@ const TaskWrapper = () => {
   /**
    * useState hooks to manage tasks, current page, and search query states.
    */
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState([
+    {
+      id: 1,
+      title: 'Finish React Project',
+      Description: 'Complete the final module for the React project.',
+      DueDate: '2024-08-18',
+      isEditing: false,
+    },
+    {
+      id: 2,
+      title: 'Buy Groceries',
+      Description: 'Purchase milk, eggs, and bread from the grocery store.',
+      DueDate: '2024-08-19',
+      isEditing: false,
+    },
+    {
+      id: 3,
+      title: 'Gym Session',
+      Description: 'Attend the evening workout session at the gym.',
+      DueDate: '2024-08-20',
+      isEditing: false,
+    },
+    {
+      id: 4,
+      title: 'Read Book',
+      Description: 'Finish reading the last two chapters of the book.',
+      DueDate: '2024-08-21',
+      isEditing: false,
+    },
+    {
+      id: 5,
+      title: 'Doctor Appointment',
+      Description: 'Visit the doctor for the annual check-up.',
+      DueDate: '2024-08-22',
+      isEditing: false,
+    },
+    {
+      id: 6,
+      title: 'Team Meeting',
+      Description: 'Participate in the project planning meeting.',
+      DueDate: '2024-08-23',
+      isEditing: false,
+    },
+    {
+      id: 7,
+      title: 'Submit Assignment',
+      Description: 'Submit the final assignment for the course.',
+      DueDate: '2024-08-24',
+      isEditing: false,
+    },
+    {
+      id: 8,
+      title: 'Plan Vacation',
+      Description: 'Plan the details for the upcoming vacation.',
+      DueDate: '2024-08-25',
+      isEditing: false,
+    },
+    {
+      id: 9,
+      title: 'Renew Car Insurance',
+      Description: 'Renew the car insurance before it expires.',
+      DueDate: '2024-08-26',
+      isEditing: false,
+    },
+  ]);
+  
   const [currentPage, setCurrentPage] = useState(1);
   const tasksPerPage = 10;
   const [search, setSearch] = useState('');
@@ -118,10 +183,11 @@ const TaskWrapper = () => {
       <form>
         <input
           type="text"
-          placeholder="Search tasks..."
+          placeholder="Search for title or description"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           hidden = {tasks.length === 0}
+          className='search'
         />
       </form>
       <br/>
